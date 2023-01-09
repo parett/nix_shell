@@ -137,7 +137,6 @@ pkgs.mkShell {
     neovim-with-my-packages
     entr
     litecli
-    irssi
     sqlite
     nodePackages.vscode-langservers-extracted
     fd

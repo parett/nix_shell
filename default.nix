@@ -109,6 +109,7 @@ let
 				vim-vsnip-integ
 				nvim-lspconfig
 				nvim-treesitter
+				(nvim-treesitter.withPlugins(p: [p.java p.sql p.html p.css p.javascript p.nix])).dependencies
 				vim-dadbod
 				vim-dadbod-completion
 				nvim-compe

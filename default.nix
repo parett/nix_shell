@@ -23,6 +23,11 @@ let
       sha256 = "x2jpJ49G6fJhwE2I2FA4wZy/moZokvApJhzUav+fzqA=";
     };
   };
+  bfr-maven = pkgs.maven.overrideAttrs(
+    o: { postUnpack = ''
+      cp ${./maven/settings.xml} $name/conf/settings.xml  # just an example; do your thing here
+    ''; }
+  );
   neovim-with-my-packages =
     pkgs.neovim.override {
       configure = {
@@ -84,7 +89,7 @@ let
 
 			nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 			nnoremap <leader>rr <cmd>lua vim.lsp.buf.rename()<CR>
-			nnoremap <leader>rf <cmd>lua vim.lsp.buf.formatting()<CR>
+			nnoremap <leader>rf <cmd>lua vim.lsp.buf.format()<CR>
 
 			nnoremap <leader>ww <cmd>w<CR>
 			nnoremap <leader>wq <cmd>wq<CR>
